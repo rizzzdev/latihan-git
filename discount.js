@@ -14,7 +14,13 @@
 
 function applyDiscount(subtotal, voucherCode = null) {
   // TODO (Murid): Implementasikan logika voucher diskon
-  throw new Error("applyDiscount() di discount.js belum diimplementasikan oleh Murid!");
+  if(voucherCode === "DISKON10") {
+    return subtotal - (subtotal * 0.10);
+  }
+  if(voucherCode === "DISKON50") {
+    return subtotal - (subtotal * 0.50);
+  }
+  return subtotal;
 }
 
 module.exports = { applyDiscount };
