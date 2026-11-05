@@ -1,5 +1,5 @@
 const assert = require("node:assert");
-const { checkout } = require("./app");
+const { checkout } = require("./checkout");
 
 console.log("==========================================");
 console.log("🧪 MENJALANKAN PENGUJIAN CHECKOUT BELANJA");
@@ -40,14 +40,14 @@ try {
 
   console.log("\n==========================================");
   console.log("🎉 SELAMAT! SEMUA TES LULUS 100%!");
-  console.log("Fitur Guru & Murid berhasil terintegrasi dengan sempurna.");
+  console.log("Fitur Guru (subtotal.js) & Murid (discount.js) berhasil terintegrasi.");
   console.log("==========================================\n");
 } catch (err) {
   console.error("❌ HASIL TEST: GAGAL");
   console.error(`Pesan Kesalahan: ${err.message}\n`);
   console.log("💡 Petunjuk Pengerjaan:");
-  console.log("1. Pastikan Guru sudah membuat calculateSubtotal().");
-  console.log("2. Pastikan Murid sudah membuat applyDiscount().");
-  console.log("3. Pastikan Murid sudah melakukan 'git pull origin main' agar kode Guru masuk!\n");
+  console.log("1. Pastikan Guru sudah melengkapi calculateSubtotal() di 'subtotal.js'.");
+  console.log("2. Pastikan Murid sudah melengkapi applyDiscount() di 'discount.js'.");
+  console.log("3. Pastikan Murid sudah melakukan 'git pull origin main' agar update dari Guru masuk!\n");
   process.exit(1);
 }

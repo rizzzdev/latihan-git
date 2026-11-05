@@ -14,12 +14,14 @@ Proyek ini dirancang untuk latihan alur kerja (*workflow*) kolaborasi tim menggu
 
 ---
 
-## 🛠️ Pembagian Tugas di `app.js`
+## 🛠️ Pembagian Berkas (File Separation)
 
-| Peran | Fungsi yang Dikerjakan | Deskripsi |
+| File | Penanggung Jawab | Deskripsi |
 | :--- | :--- | :--- |
-| **Guru** | `calculateSubtotal(items)` | Menghitung total harga belanjaan berdasarkan harga & kuantiti. |
-| **Murid** | `applyDiscount(subtotal, voucherCode)` | Menerapkan potongan harga sesuai kode voucher (`DISKON10`, `DISKON50`). |
+| **`subtotal.js`** | **Guru** | Menghitung total harga belanjaan berdasarkan harga & kuantiti. |
+| **`discount.js`** | **Murid** | Menerapkan potongan harga sesuai kode voucher (`DISKON10`, `DISKON50`). |
+| **`checkout.js`** | Bersama (Integrasi) | Menggabungkan fungsi dari `subtotal.js` dan `discount.js`. |
+| **`test.js`** | Pengujian Otomatis | 1 File test penentu kelulusan integrasi. |
 
 ---
 
@@ -47,28 +49,28 @@ git checkout -b fitur-diskon
 
 ---
 
-### 3. Selesaikan Tugas Murid di `app.js`
-Buka file `app.js`, cari bagian **BAGIAN 2: TUGAS MURID**, lalu lengkapi fungsi `applyDiscount`.
+### 3. Selesaikan Tugas Murid di `discount.js`
+Buka file `discount.js`, lalu lengkapi fungsi `applyDiscount`.
 
 ---
 
 ### 4. Simpan Perubahan (Commit)
 Setelah selesai mengedit:
 ```bash
-git add app.js
-git commit -m "feat: implementasi fitur diskon kupon"
+git add discount.js
+git commit -m "feat: implementasi fungsi voucher diskon"
 ```
 
 Coba jalankan kembali:
 ```bash
 node test.js
 ```
-*Catatan:* Test **masih akan gagal** karena fungsi `calculateSubtotal` milik Guru belum ada di laptop Anda!
+*Catatan:* Test **masih akan gagal** karena fungsi `calculateSubtotal` milik Guru di `subtotal.js` belum diimplementasikan!
 
 ---
 
 ### 5. Tarik Kode dari Guru (Git Pull)
-Tunggu kabar dari Guru bahwa fitur `calculateSubtotal` telah selesai dan di-push ke branch `main`.
+Tunggu kabar dari Guru bahwa file `subtotal.js` telah selesai dan di-push ke branch `main`.
 Setelah Guru selesai, tarik perubahannya ke branch Anda:
 ```bash
 git pull origin main
