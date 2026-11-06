@@ -1,4 +1,16 @@
-# 🚀 Latihan Kolaborasi Git: Checkout Belanja
+# 🚀 Latihan Kolaborasi Git & TypeScript: Checkout Belanja
+
+> 💡 **Tugas Baru: Latihan TypeScript Dasar**  
+> Untuk penugasan migrasi dan pengembangan TypeScript berdasarkan video Programmer Zaman Now, silakan buka panduan lengkap di:  
+> 👉 **[TASKS.md](./TASKS.md)**
+>
+> Perintah Cepat Pengujian:
+> ```bash
+> npm test        # Menjalankan pengujian otomatis per task
+> npm run check   # Memeriksa validasi tipe data (strict type check)
+> ```
+
+---
 
 Proyek ini dirancang untuk latihan alur kerja (*workflow*) kolaborasi tim menggunakan Git dan GitHub antara **Guru** dan **Murid**.
 

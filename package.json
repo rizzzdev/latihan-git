@@ -1,0 +1,24 @@
+{
+  "name": "latihan-typescript-checkout",
+  "version": "1.0.0",
+  "description": "Latihan TypeScript Dasar: Migrasi & Pengembangan Fitur Checkout Belanja berdasarkan video Programmer Zaman Now",
+  "main": "dist/checkout.js",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "tsx src/test.ts",
+    "build": "tsc",
+    "start": "node dist/test.js"
+  },
+  "keywords": [
+    "typescript",
+    "exercise",
+    "education"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
