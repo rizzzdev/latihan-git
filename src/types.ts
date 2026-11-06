@@ -24,13 +24,7 @@
 // - quantity: number (jumlah unit belanja)
 //
 // TODO (Murid): Hapus 'any' dan tuliskan spesifikasi propertinya
-export type CartItem = {
-  name: string;
-  price: number;
-  quantity: number;
-};
-
-
+export type CartItem = any;
 
 
 // ----------------------------------------------------------------------------
@@ -40,8 +34,7 @@ export type CartItem = {
 //    string "DISKON10" atau "DISKON50".
 //
 // TODO (Murid): Hapus 'any' dan tuliskan Union Type
-export type VoucherCode = "DISKON10" | "DISKON50";
-
+export type VoucherCode = any;
 
 
 // 2. Buat Enum 'DiscountRate' yang memetakan kode diskon ke desimal:
@@ -50,8 +43,9 @@ export type VoucherCode = "DISKON10" | "DISKON50";
 //
 // TODO (Murid): Definisikan anggota enum DiscountRate di bawah ini
 export enum DiscountRate {
-  DISKON10 = 0.10,
-  DISKON50 = 0.50,
+  // Tuliskan anggota enum di sini:
+  // DISKON10 = ...,
+  // DISKON50 = ...
 }
 
 
@@ -62,8 +56,7 @@ export enum DiscountRate {
 // Fungsi ini harus menerima parameter 'subtotal' (number) dan mengembalikan nilai 'number'.
 //
 // TODO (Murid): Hapus 'any' dan tuliskan signature tipe fungsi
-export type PromoCalculator = (subtotal: number) => number;
-
+export type PromoCalculator = any;
 
 
 // ----------------------------------------------------------------------------
@@ -76,11 +69,8 @@ export type PromoCalculator = (subtotal: number) => number;
 //
 // TODO (Murid): Tuliskan deklarasi properti interface Customer
 export interface Customer {
-  name: string;
-  email: string;
-  isMember?: boolean;
+  [key: string]: any;
 }
-
 
 
 // 2. Buat interface 'OrderReceipt' dengan properti:
@@ -94,13 +84,5 @@ export interface Customer {
 //
 // TODO (Murid): Tuliskan deklarasi properti interface OrderReceipt
 export interface OrderReceipt {
-  items: CartItem[];
-  subtotal: number;
-  discount: number;
-  additionalFees: number;
-  grandTotal: number;
-  createdAt: Date;
-  customer?: Customer;
   [key: string]: any;
 }
-
