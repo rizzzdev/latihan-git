@@ -6,6 +6,7 @@
   "scripts": {
     "check": "tsc --noEmit",
     "test": "tsx src/test.ts",
+    "test:live": "tsx src/live-test/test.ts",
     "build": "tsc",
     "start": "node dist/test.js"
   },
