@@ -12,7 +12,15 @@ import { CartItem } from "./types";
  * 4. Hitung total: jumlahkan (item.price * item.quantity) untuk seluruh item.
  * 5. Jika array items kosong, fungsi harus mengembalikan 0.
  */
-export function calculateSubtotal(items: any): any {
-  // TODO (Murid): Implementasikan logika kalkulasi subtotal
-  return 0;
-}
+export function calculateSubtotal(items: CartItem[]): number {
+  if (items.length === 0) {
+    return 0;
+  }
+
+  let total = 0;
+  for (const item of items) {
+    total += item.price * item.quantity;
+  }
+
+  return total;
+} 
