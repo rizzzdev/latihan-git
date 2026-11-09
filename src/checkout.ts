@@ -33,11 +33,24 @@ import { calculateAdditionalFees } from "./calculator";
  *      }
  */
 export function processCheckout(
-  items: any,
-  voucherCode: any = null,
-  customer: any = undefined,
-  ...additionalFees: any[]
-): any {
-  // TODO (Murid): Lengkapi integrasi checkout dan kembalikan objek OrderReceipt
-  return null;
+  items: CartItem[],
+  voucherCode?: VoucherCode | null,
+  customer?: Customer,
+  ...additionalFees: number[]
+): OrderReceipt {
+  const subtotal = calculateSubtotal(items);
+  const totalSetelahDiskon = applyDiscount(subtotal, voucherCode);
+  const discount = subtotal - totalSetelahDiskon;
+  const totalBiayaTambahan = calculateAdditionalFees(...additionalFees);
+  const grandTotal = totalSetelahDiskon + totalBiayaTambahan;
+
+  return {
+    customer,
+    items,
+    subtotal,
+    discount,
+    additionalFees: totalBiayaTambahan,
+    grandTotal,
+    createdAt: new Date(),
+  };
 }

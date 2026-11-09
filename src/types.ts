@@ -23,8 +23,11 @@
 // - price: number (harga satuan dalam rupiah)
 // - quantity: number (jumlah unit belanja)
 //
-// TODO (Murid): Hapus 'any' dan tuliskan spesifikasi propertinya
-export type CartItem = any;
+export type CartItem = {
+  name: string;
+  price: number;
+  quantity: number;
+};
 
 
 // ----------------------------------------------------------------------------
@@ -33,19 +36,16 @@ export type CartItem = any;
 // 1. Buat Union Type 'VoucherCode' yang nilainya HANYA boleh bernilai
 //    string "DISKON10" atau "DISKON50".
 //
-// TODO (Murid): Hapus 'any' dan tuliskan Union Type
-export type VoucherCode = any;
+export type VoucherCode = "DISKON10" | "DISKON50";
 
 
 // 2. Buat Enum 'DiscountRate' yang memetakan kode diskon ke desimal:
 //    - DISKON10 = 0.10
 //    - DISKON50 = 0.50
 //
-// TODO (Murid): Definisikan anggota enum DiscountRate di bawah ini
 export enum DiscountRate {
-  // Tuliskan anggota enum di sini:
-  // DISKON10 = ...,
-  // DISKON50 = ...
+  DISKON10 = 0.10,
+  DISKON50 = 0.50,
 }
 
 
@@ -55,8 +55,7 @@ export enum DiscountRate {
 // Buat Function Type Alias bernama 'PromoCalculator'.
 // Fungsi ini harus menerima parameter 'subtotal' (number) dan mengembalikan nilai 'number'.
 //
-// TODO (Murid): Hapus 'any' dan tuliskan signature tipe fungsi
-export type PromoCalculator = any;
+export type PromoCalculator = (subtotal: number) => number;
 
 
 // ----------------------------------------------------------------------------
@@ -67,9 +66,10 @@ export type PromoCalculator = any;
 //    - email: string (email pelanggan)
 //    - isMember?: boolean (opsional: apakah pelanggan adalah member VIP)
 //
-// TODO (Murid): Tuliskan deklarasi properti interface Customer
 export interface Customer {
-  [key: string]: any;
+  name: string;
+  email: string;
+  isMember?: boolean;
 }
 
 
@@ -82,7 +82,12 @@ export interface Customer {
 //    - createdAt: Date (waktu transaksi dibuat)
 //    - customer?: Customer (opsional: data pelanggan jika ada)
 //
-// TODO (Murid): Tuliskan deklarasi properti interface OrderReceipt
 export interface OrderReceipt {
-  [key: string]: any;
+  items: CartItem[];
+  subtotal: number;
+  discount: number;
+  additionalFees: number;
+  grandTotal: number;
+  createdAt: Date;
+  customer?: Customer;
 }

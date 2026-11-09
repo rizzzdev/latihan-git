@@ -16,7 +16,17 @@ import { VoucherCode, DiscountRate } from "./types";
  *    - Jika voucherCode tidak valid, null, atau undefined, kembalikan subtotal utuh (diskon 0%).
  * 4. Kembalikan total belanja setelah dikurangi nilai diskon.
  */
-export function applyDiscount(subtotal: any, voucherCode: any = null): any {
-  // TODO (Murid): Implementasikan logika diskon di sini
+export function applyDiscount(
+  subtotal: number,
+  voucherCode?: VoucherCode | null
+): number {
+  if (voucherCode === "DISKON10") {
+    return subtotal - subtotal * DiscountRate.DISKON10;
+  }
+
+  if (voucherCode === "DISKON50") {
+    return subtotal - subtotal * DiscountRate.DISKON50;
+  }
+
   return subtotal;
 }

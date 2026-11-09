@@ -1,11 +1,11 @@
 import assert from "node:assert";
 import {
-  namaSiswa,
-  umurSiswa,
-  isAktif,
-  catatan,
+  name,
+  age,
+  isActive,
+  notes,
   formatProfil,
-  daftarNilai,
+  scores,
   hitungRataRata,
   StatusPesanan,
   UserID,
@@ -69,10 +69,10 @@ recordTest(
   "Bagian 1: Variabel & Tipe Primitif",
   "Task 1.1: Variabel primitif dideklarasikan dengan tipe dan nilai awal yang tepat",
   () => {
-    assert.strictEqual(typeof namaSiswa, "string", "namaSiswa harus bertipe string");
-    assert.strictEqual(typeof umurSiswa, "number", "umurSiswa harus bertipe number");
-    assert.strictEqual(typeof isAktif, "boolean", "isAktif harus bertipe boolean");
-    assert.strictEqual(catatan === null || typeof catatan === "string", true, "catatan harus bertipe string | null");
+    assert.strictEqual(typeof name, "string", "name harus bertipe string");
+    assert.strictEqual(typeof age, "number", "age harus bertipe number");
+    assert.strictEqual(typeof isActive, "boolean", "isActive harus bertipe boolean");
+    assert.strictEqual(notes === null || typeof notes === "string", true, "notes harus bertipe string | null");
   }
 );
 
@@ -108,12 +108,12 @@ recordTest(
 
 recordTest(
   "Bagian 2: Tipe Data Kompleks (Array, Union, Tuple, Object)",
-  "Task 2.1: daftarNilai merupakan array angka bertipe number[]",
+  "Task 2.1: scores merupakan array angka bertipe number[]",
   () => {
-    assert.ok(Array.isArray(daftarNilai), "daftarNilai harus berupa Array");
-    assert.ok(daftarNilai.length > 0, "daftarNilai sebaiknya berisi data nilai awal");
-    for (const val of daftarNilai) {
-      assert.strictEqual(typeof val, "number", "Elemen daftarNilai harus berupa number");
+    assert.ok(Array.isArray(scores), "scores harus berupa Array");
+    assert.ok(scores.length > 0, "scores sebaiknya berisi data nilai awal");
+    for (const val of scores) {
+      assert.strictEqual(typeof val, "number", "Elemen scores harus berupa number");
     }
   }
 );

@@ -11,9 +11,13 @@ import { PromoCalculator } from "./types";
  * 3. Jumlahkan seluruh elemen di dalam array `fees` (misal: ongkir, asuransi, biaya kemasan).
  * 4. Jika tidak ada biaya tambahan yang dilewatkan, kembalikan 0.
  */
-export function calculateAdditionalFees(...fees: any[]): any {
-  // TODO (Murid): Implementasikan kalkulasi rest parameter di sini
-  return 0;
+export function calculateAdditionalFees(...fees: number[]): number {
+  let total = 0;
+  for (const fee of fees) {
+    total += fee;
+  }
+
+  return total;
 }
 
 /**
@@ -25,7 +29,6 @@ export function calculateAdditionalFees(...fees: any[]): any {
  * 3. Jalankan fungsi callback `promo` dengan melewatkan `subtotal` sebagai argumen,
  *    lalu kembalikan nilai hasil eksekusi promo tersebut.
  */
-export function applyCustomPromotion(subtotal: any, promo: any): any {
-  // TODO (Murid): Implementasikan pemanggilan callback promo di sini
-  return 0;
+export function applyCustomPromotion(subtotal: number, promo: PromoCalculator): number {
+  return promo(subtotal);
 }
